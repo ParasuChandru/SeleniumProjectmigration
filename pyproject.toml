@@ -1,0 +1,29 @@
+[project]
+name = "selenium-project-migration"
+version = "1.0.0"
+description = "Robot Framework test automation project migrated from Selenium"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+include = ["libraries*"]
+
+[project.optional-dependencies]
+test = [
+    "robotframework",
+    "robotframework-seleniumlibrary",
+    "PyYAML",
+    "requests",
+]
+dev = [
+    "robotframework-robocop",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.robocop]
+include = ["0***"]
+exclude = ["W0501"]
+reports = ["robotricop-report"]
+configuration-options = {max-test-lines = 50, max-keyword-lines = 50}

@@ -1,0 +1,89 @@
+# ==============================================================================
+# Test Data - Test Scenarios
+# ==============================================================================
+
+# Test scenarios for login flows
+login_scenarios:
+  successful_login:
+    description: "Login with valid credentials"
+    user: "valid_users.admin"
+    expected:
+      success_message: "Welcome back, Administrator"
+      redirect_to: "/dashboard"
+  login_with_wrong_password:
+    description: "Login with correct username but wrong password"
+    username: "admin"
+    password: "WrongPassword@123"
+    expected_error: "Invalid username or password"
+  login_with_nonexistent_user:
+    description: "Login with nonexistent username"
+    username: "doesnotexist"
+    password: "SomePass@123"
+    expected_error: "Invalid username or password"
+  login_empty_fields:
+    description: "Login with empty username and password"
+    username: ""
+    password: ""
+    expected_error: "Username is required"
+  login_empty_password:
+    description: "Login with username but empty password"
+    username: "admin"
+    password: ""
+    expected_error: "Password is required"
+
+# Test scenarios for form validation
+form_scenarios:
+  valid_form_submission:
+    fields:
+      name: "Test User"
+      email: "test@example.com"
+      message: "Hello World"
+    expected:
+      success: true
+      confirmation: "Form submitted successfully"
+  invalid_email_format:
+    fields:
+      name: "Test User"
+      email: "invalid-email"
+      message: "Test"
+    expected:
+      success: false
+      error: "Please enter a valid email address"
+  empty_required_fields:
+    fields:
+      name: ""
+      email: ""
+      message: ""
+    expected:
+      success: false
+      errors:
+        - "Name is required"
+        - "Email is required"
+        - "Message is required"
+
+# Test scenarios for navigation
+navigation_scenarios:
+  navigate_to_home:
+    description: "Navigate to home page"
+    target: "/"
+    expected_title: "Home"
+  navigate_to_settings:
+    description: "Navigate to settings page"
+    target: "/settings"
+    expected_title: "Settings"
+  navigate_to_profile:
+    description: "Navigate to profile page"
+    target: "/profile"
+    expected_title: "My Profile"
+
+# Test scenarios for search
+search_scenarios:
+  search_valid_term:
+    query: "test"
+    expected_min_results: 1
+  search_no_results:
+    query: "xyznonexistent"
+    expected_min_results: 0
+  search_special_chars:
+    query: "!@#$%"
+    expected_min_results: 0

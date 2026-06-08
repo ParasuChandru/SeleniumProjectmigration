@@ -1,0 +1,79 @@
+# ==============================================================================
+# Test Data - User Credentials
+# All test user credentials stored here for centralized management
+# ==============================================================================
+
+# Valid test users for login scenarios
+valid_users:
+  admin:
+    username: "admin"
+    password: "Admin@123"
+    full_name: "Administrator"
+    role: "admin"
+  regular_user:
+    username: "user1"
+    password: "User@123"
+    full_name: "John Doe"
+    role: "user"
+  premium_user:
+    username: "user2"
+    password: "User2@123"
+    full_name: "Jane Smith"
+    role: "premium"
+  limited_user:
+    username: "user3"
+    password: "User3@123"
+    full_name: "Bob Wilson"
+    role: "limited"
+
+# Invalid test users for negative scenarios
+invalid_users:
+  nonexistent:
+    username: "nonexistent_user"
+    password: "WrongPass@123"
+  locked:
+    username: "locked_user"
+    password: "Locked@123"
+  expired:
+    username: "expired_user"
+    password: "Expired@123"
+
+# Special character test usernames
+special_usernames:
+  with_spaces: "user name"
+  with_special: "user@test#1"
+  with_emoji: "user🔤test"
+  empty: ""
+  too_long: "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+  sql_injection: "' OR 1=1 --"
+  xss_payload: "<script>alert('xss')</script>"
+
+# Password policies for validation
+password_policies:
+  min_length: 8
+  max_length: 128
+  require_uppercase: true
+  require_lowercase: true
+  require_number: true
+  require_special: true
+  invalid_passwords:
+    - "short"
+    - "alllowercase1!"
+    - "ALLUPPERCASE1!"
+    - "NoSpecial1"
+    - "NoNumber!a"
+    - ""
+
+# Registration test data
+registration_data:
+  valid:
+    first_name: "Test"
+    last_name: "User"
+    email: "testuser@example.com"
+    phone: "+1234567890"
+  duplicate_email: "existing@example.com"
+  invalid_emails:
+    - "not-an-email"
+    - "@no-local.com"
+    - "no-domain@"
+    - ""

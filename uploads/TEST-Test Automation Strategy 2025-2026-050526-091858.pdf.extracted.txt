@@ -1,0 +1,648 @@
+Test Automation Strategy 2025-2026
+1. Purpose
+The purpose of this document is to ensure that test automation in LocalTapiola is implemented
+effectively and efficiently within a software development lifecycle. It provides clear plan and
+framework to guide teams in automating repetitive testing, improving the speed and the
+accuracy of testing, and thus supporting continuous integration and delivery.
+Presentations
+File
+Modified
+test_automation_strategy_cornerstones_v1_20122024.pptx
+Dec 20, 2024 by Paavo
+Rohamo
+1. Purpose
+High-level Vision
+Presentations
+Note to reader:
+This document presents version 1.0 of the Test Automation Strategy for the years 2025-
+2026. It is important to note that this document will undergo light revisions in the coming
+year. The next update is scheduled for Q2, following the evaluation of the test automation
+maturity survey results.
+High-level Vision
+The standardization of test automation at LocalTapiola is set to enhance both the speed
+and reliability of our testing processes, ultimately elevating the quality of the systems
+developed for our customers. By implementing a unified testing framework and
+infrastructure, we are positioning ourselves to support release on-demand model and
+achieving true shift-left practices, paving the way for cost-effective test automation in the
+future.
+The success of test automation development hinges on excellent collaboration between
+LocalTapiola and our vendors. This partnership is crucial for fostering a cultural shift that
+positions test automation as a cornerstone of our quality assurance practices.
+Furthermore, we are actively exploring the potential of artificial intelligence to supercharge
+our test automation efforts, ensuring that we remain on the right path moving forward.  
+
+
+2. Scope
+3. Objectives
+Shared objectives for test automation
+1. Standardization and practices
+2. Collaboration and ecosystem
+3. Competence and test automation culture
+4. Test Data Management and Artificial Intelligence
+4. Testing Levels
+5. Test Environments
+6. Test Case Design
+Best Practices and standardization
+Maintainability
+Robot Framework best practices
+Robot Framework style guide
+7. Test Data Management
+8. Test Automation Tools
+Robot Framework (Primary test automation framework)
+Java + Selenium testing frameworks (Secondary test automation framework)
+Browserstack
+Azure DevOps pipelines
+Azure Keyvault
+9. Documentation
+10. Reporting & Metrics
+a. Test automation reporting
+Zephyr
+Other reporting methods
+b. Test automation maturity metric
+Test Automation Maturity KPI’s
+11. Training
+12. Continuous Improvement
+2. Scope
+The current scope of this test automation strategy document includes functional testing types
+like smoke, system, integration, and user acceptance testing. However, it does not address unit,
+security, accessibility, load, or performance testing, which may be automated at some point in
+the future.
+Testing levels included:
+Smoke
+System
+Integration
+User Acceptance
+
+
+3. Objectives
+The primary aim of this test automation strategy is to create cohesive standards, methodologies,
+frameworks, and platforms for test automation at LocalTapiola. Additionally, it will steer various
+stakeholders involved in test automation towards LocalTapiola’s direction. We have pinpointed
+shared test automation goals and outlined four key objectives that will form the cornerstone of
+this document.
+Shared objectives for test automation
+Increase test coverage
+Automate repetitive test cases and scenarios and focus on high-risk and high-value ares of
+the applications
+Ensure that those parts of the application which are not possible to be tested via manual
+testing are automated
+Speed up testing cycles, especially regression testing
+Automate time-consuming and repetitive manual tests
+Early defect detection
+Shift-left, more testing at system and integration testing levels.
+Faster regression testing and feedback
+Test cases and sets must be robust, parallelized, and scalable.
+Optimize resource utilization
+Reduce costs over time
+Automate repetitive test cases
+Create maintainable and scalable automations
+1. Standardization and practices
+Unified test automation standards, models and processes
+Creating unified processes and models for everyone doing test automation practices
+Improved quality, scalability, maintainability
+Standardised frameworks, tools and platforms
+Robot Framework should be used as the main test automation framework in the future at
+LocalTapiola
+Unified testing framework will allow true shift left and test scripts produced in earlier
+testing phases can be used in later stages.
+Secondary test automation framework is Java+Selenium framework, but the goal will be
+just one unified testing framework in the future
+
+
+Potential migrations out from Java+Selenium framework has to be carefully planned and
+executed. Those will require great efforts from all parties included. Migrations has to be
+really carefully evaluated and has to have real benefits for LocalTapiola, and should not
+bring additional costs to projects. 
+Seek and evaluate potential future low-code test automation frameworks with builtin AI
+functionalities
+Azure DevOps Pipelines and Azure DevOps Git should be the main tools for CI/CD and
+Version Management
+Custom Robot Framework libraries for common testing functionalities
+Usage of community made libraries is encouraged
+Creation of LocalTapiolas own Robot Framework libraries for common components (Core
+system navigations, logins, etc.)
+•Already under development (CustomerLibrary, ZephyrLibrary)
+Common documentations for tools, infra and usage should be created
+Test automation results must be presented transparently for those in need
+Running test automations and reviewing results must happen in hours, not days
+Goal for pipeline run is (1h at max)
+Migrating to AzureDevOps pipelines environment
+2. Collaboration and ecosystem
+Test automation ownership and governance
+LocalTapiola will be deepening vendor guidance while unifying test automation framework.
+LocalTapiola will make test automation guidelines for processes, models and tools.
+We must ensure better collaboration between LT test automation and vendors, and also
+between vendors. This enables knowledge sharing between all test automation related parties
+and business.
+Getting rid of silos that currently exists.
+Current silos affect greatly on the price tag of test automation
+3. Competence and test automation culture
+Creating test automation culture is long term and continuous practice
+True Shift Left enabled by unified test automation framework
+Leading by example
+LocalTapiolas own team will do its best to champion, adapt and share test automation
+culture at LocalTapiola
+
+
+We are open to all kinds of ideas and suggestions from our vendors regarding culture
+and competence development
+Journey for test automation culture requires
+Standardizing test automation framework, processes and models
+Enabling faster test automation runs and results
+Integrating automation into everyday practices -> Dashboards and health metrics
+Competence
+Training sessions for LocalTapiola Quality Assurance
+Enabling professional path for manual testers
+Requires continuous development
+Feedback loop for test automation
+Test automation maturity survey
+Ensuring time and budget for refactoring and technical debt
+This requires discussions with business
+4. Test Data Management and Artificial Intelligence
+Test data used should be synthetic
+Automations should create and delete their own test data used
+Goal is that no masked test data is used in the future
+Upcoming projects
+Creation of test data with automation tools (2025 Q1 -->)
+Using AI as part of test automation maintenance (2025 Q1-Q2 -->)
+Hopefully we get one dedicated LLM which could be used by all test automation related
+matters
+Research
+Using AI in test case and test code generation
+Possible future test automation frameworks utilizing AI
+Researching future Robot Framework libraries that uses AI at some level
+4. Testing Levels
+Testing levels are covering only functional testing. 
+Non-functional testing is out of scope for this test automation plan. 
+Unit testing or automated unit testing is not in the scope of this test automation strategy.
+
+
+Purpose
+Check if the basic
+functionality of the
+application is
+working.
+Test end-to-end
+functionalities of
+the applications.
+Validates the entire
+systems
+functionality
+against
+requirements.
+Test integrations
+between integrated
+modules such as
+API’s, ensures
+different modules
+and components
+work together as
+intended.
+Validates the
+system against
+business
+requirements and
+end-user
+expectations
+Automatio
+n focus
+Quick high-level
+checks:
+APIs are
+responding
+Application /
+system launches
+and display login
+or main page
+Automated
+functional testing
+of worksflows and
+e2e scenarios.
+Focus on critical
+paths and high-risk
+areas first
+APIs
+Middleware
+Database
+interactions
+Automating
+regression tests to
+ensure new
+changes don’t
+break existing
+functionality
+At this level we
+should not check
+every check box
+and form field is
+functional, but that
+the e2e flows
+between different
+business systems
+are functional
+Focus on critical
+paths and high-risk
+areas first
+Smoke
+System-
+Integration (SIT)
+Integration
+User Acceptance
+(UAT)
+
+
+Benefits
+Immediate
+feedback after
+build
+Avoids wasted
+effort on deeper
+testing if basic
+functionality fails
+(in Azure
+DevOps platform
+this is especially
+important cost
+wise)
+Reduces manual
+effort for lage-
+scale system
+checks.
+Ensures
+consistency and
+enables regression
+testing for
+continuous
+development.
+Able to verify
+complex
+interactions are
+working as
+intended.
+Ensures stability in
+integrations.
+Using test
+automation at
+regression testing
+enables faster
+production times
+and more stable
+systems. 
+Responsib
+ility
+LocalTapiola,
+Vendors
+Before
+commencing full
+System or User
+Acceptance test
+runs, it is essential
+to conduct smoke
+tests to ensure that
+the basic
+functionalities are
+working as
+intended.
+Vendors
+The primary
+responsibility for
+system testing lies
+with the vendors.
+Vendors,
+(LocalTapiola)
+The primary
+responsibility for
+system testing lies
+with the vendors. 
+LT test automation
+has to make some
+integration testing
+to be able to create
+sufficient UAT
+regression test
+sets.
+LocalTapiola,
+(Vendors)
+Practices
+Incorporate a
+smoke test phase
+into your pipelines
+and execute it prior
+to running the test
+sets. This practice
+will help verify that
+the test
+environment is
+stable, reducing
+At this level we
+should verify
+functionality of
+components like:
+Forms, Text
+Fields, Inputs,
+Buttons
+Navigation
+components
+Use industry best
+practices.
+Create “smoke”
+tests for APIs and
+other systems
+If tool used is
+Robot Framework:
+Prefer templates
+To ensure that run
+times remain
+efficient and
+manageable, it's
+essential to create
+more targeted and
+focused test cases.
+To ensure that
+business
+functionalities
+
+
+5. Test Environments
+Test automation should be thoughtfully designed and implemented to enhance the usability and
+scalability of test suites and cases across different environments. We should be able to use the
+same test automation test suites and cases in every possible environment with slight changes.
+To achieve this, it is essential to store environment variables/urls/paths in variables rather than
+hard-coding them directly into test cases.
+Test environments used in LocalTapiola for test automation are:
+SIT
+SIT2
+UAT
+6. Test Case Design
+Best Practices and standardization
+Test case design should follow the best practices and industry standards for given test
+automation framework.
+Focus on critical paths and high-risk areas first
+the likelihood of
+failures in the
+subsequent test
+sets.
+Invalid inputs,
+edge cases,
+error conditions
+Encapsulate UI
+interactions in
+reusable
+components (Page
+Object Model, or
+similar)
+To ensure that run
+times remain
+efficient and
+manageable, it's
+essential to create
+more targeted and
+focused test cases.
+Do not
+hardcode, paths,
+keys, headers,
+etc.
+Use modular
+code with ability
+to scale
+operate efficiently,
+it is essential to
+maximize the
+utilization of APIs.
+This approach will
+also contribute to
+maintaining low
+test run times.
+
+
+To ensure optimal performance, each test case should be designed to run independently. This
+approach facilitates complete parallelization, allowing tests to execute without dependencies
+on previous cases.
+Use proper test and suite; setup and teardown methods
+To effectively manage dynamic elements and timing challenges, it is advisable to utilize
+explicit waits and "wait until" conditions. Avoid relying on sleep functions whenever possible.
+Maintainability
+Test cases should be maintainable, scalable and modular.
+Ensure test scripts are easy to read, understand, documented at sufficient level.
+Our objective is to ensure that it doesn't matter who created a test case; with standardisation
+and usage of best practices every test automation developer at LocalTapiola should be
+equipped with the knowledge to resolve any specific test case
+As we move towards a unified test automation framework, it is essential to prioritize design for
+reusability. Our objective is to leverage the test automation scripts created during the system
+and integration testing phases for use in the User Acceptance Testing (UAT) phase.
+Separate test data from test logic to enable reusability and maintainability
+Robot Framework best practices
+Robot Framework employs a "Keyword Driven" approach for test automation scripting, which
+should be consistently applied at every level within LocalTapiola.
+For best practices related to Robot Framework, you can refer to the 
+ and the 
+.
+Additionally, you can consult our own Robot Framework style guide for further insights.
+Robot Framework style guide
+LT has created style guide and project template which should be used as a base when test
+automation is conducted through Robot Framework. These documents will be under constant
+development.
+Style Guide: 
+Confluence: 
+GIT: 
+, if you need access message owner of this
+document.
+Project Template:
+GIT: 
+, if you need access message owner of this
+document.
+Style Guide | ROBOT
+FRAMEWORK
+Robot Framework User Guide
+Robot Framework Style Guide - WIP - Testing - Confluence (atlassian.net)
+style_guide - Repos (visualstudio.com)
+style_guide - Repos (visualstudio.com)
+
+
+7. Test Data Management
+Test automation should, by default, generate the necessary test data used. This approach aims
+to ensure that all test data at LocalTapiola is synthetic in the future. However in some cases
+generation of test data is not possible for more complex cases. These situations has to be
+evaluated carefully, as the goal is that no masked data is used in the future.
+Both LocalTapiola and its vendors should work collaboratively towards establishing standardized
+methods for test data creation.
+NOTE: This section will be updated after H1/2025 Test Data project.
+8. Test Automation Tools
+Robot Framework (Primary test automation framework)
+Robot Framework is set to become the primary test automation framework for the foreseeable
+future.
+Currently, many system-level test automations are built using the Java + Selenium test
+automation framework. It is essential to explore the most effective methods for maintaining Java
++ Selenium at an optimal level while also investigating the best approaches to transition these
+tests to Robot Framework. However, it is important to note that in some instances, such a
+conversion may not be feasible.
+Java + Selenium testing frameworks (Secondary test automation framework)
+Java and Selenium testing frameworks are primarily employed by TCS and Toivo projects.
+LocalTapiola continues to utilize Java and Selenium in ongoing projects, as well as for the
+regression sets developed in the past, as long as necessary.
+LocalTapiola is set to begin planning for potential migrations from Java + Selenium to the Robot
+Framework in the Spring of 2025. The initial projects under consideration for this migration
+include Aito Digi, other Digi projects, and Toivo. At this stage, we lack clear visibility on whether
+all projects can be migrated and the specific timelines for each transition.
+It is recommended that no new test automation projects utilizing Java and Selenium be initiated.
+Browserstack
+BrowserStack offers a comprehensive solution for testing across a diverse range of browsers
+and mobile devices.
+
+
+While the use of BrowserStack is highly encouraged, it is not a strict requirement. LocalTapiola
+is committed to developing templates for the Robot Framework, which facilitate seamless
+integration with BrowserStack whenever necessary.
+Azure DevOps pipelines
+LocalTapiola has made substantial investments in migrating to a cloud platform. Currently, many
+of our regression test automations are executed on local servers. Our objective is to transition
+from these servers to utilizing Azure DevOps environments.
+This shift will significantly reduce the maintenance required for various environments, such as
+Jenkins.
+Transitioning to Azure DevOps pipelines presents considerable advantages compared to other
+tools. By moving away from Jenkins pipelines, we can not only improve the scalability of our
+DevOps practices across different projects but also lower long-term infrastructure maintenance
+costs.
+Azure DevOps pipelines enable DevOps teams at LocalTapiola to implement a release-on-
+demand model. As a result, migrations will be pivotal in this transition.
+Azure Keyvault
+Utilizing Azure Key Vault as the primary storage solution for various test automation-related
+secrets and passwords is highly recommended. Azure Key Vault can be seamlessly integrated
+into Azure DevOps pipelines, allowing for the retrieval of secrets without the need for managing
+additional secret files. This approach simplifies the process, especially when passwords and
+secrets require updates.
+Utilizing tools such as Keepass raises significant security concerns, primarily due to the
+challenges in managing access to passwords, sensitive information, and user rights.
+LocalTapiola strongly advocates for transitioning away from tools like Keepass as swiftly as
+possible.
+9. Documentation
+Test automation must be documented properly, adhering to established best practices. It should
+be regarded as a form of software development rather than merely a collection of scripts or
+gimmicks. Proper documentation will significantly ease maintenance efforts. This chapter
+outlines key principles to follow in LocalTapiola's test automation, which can certainly be
+expanded upon.
+
+
+10. Reporting & Metrics
+a. Test automation reporting
+Zephyr
+Zephyr is used as the primary channel for reporting test automation results to stakeholders.
+Currently, the guidelines for using Zephyr vary among users. Our goal is to standardize these
+methods while aligning our test automation framework with the Robot Framework.
+Other reporting methods
+As we increasingly engage with Azure DevOps pipelines, it is essential to explore opportunities
+for enhancing the visibility of our reporting to stakeholders and the business. Additionally, we
+require clear dashboards and health metrics to serve our internal needs effectively.
+Exploring alternative methods to enhance test automation reporting is highly encouraged. By
+doing so, you can achieve greater robustness, speed, and transparency in your reporting
+processes.
+Test case
+Jira / Zephyr
+Robot
+Framework
+Test cases according to Robot Framework style guide (test case should
+document itself)
+Libraries according to python PEP8 starndards
+Commenting code (make comments when necessary, do not overuse
+comments)
+Project test
+automation
+LifeCycle
+Project confluence pages
+UAT test
+automation
+LifeCycle
+documentation
+See this page: 
+Projects
+UNDEFINED
+Tool /
+Framework
+Documentation
+
+
+b. Test automation maturity metric
+Introducing a new metric for assessing test automation maturity. Tracking these KPIs helps
+LocalTapiola to understand our test automation maturity, identify areas for improvement and
+demonstrate the value of automation over time. This will also help us to keep track of future
+improvements made in the field of test automation at LocalTapiola.
+Test Automation Maturity KPI’s
+SQ1-Strategy
+We have a test automation strategy that defines ‘what test scope will be automated to what
+degree, when, by whom, by which methods, by what test tools, in what kind of
+environment’.
+SQ2-Resources
+We allocate enough resources for test automation, e.g., skilled people, the funding, the time
+& effort, test environment with the required software, hardware, or test data for test
+automation.
+Why: To gain insights of test automation maturity at LocalTapiola and to assess its
+current state.
+When: Twice a year, at the beginning of each half.
+Dates:
+2025 H1 
+1st Question form will be sent on 27.01.2025 (time to answer 1 week)
+Going through the results during Q1, and making improvements to strategy
+Results Presentation: Week 9
+2nd Question form will be sent on 01.08.2025 (time to answer 2 weeks)
+Going through the results during Q3, and making improvements to strategy
+Results Presentation: Week 37-38
+How: Inquiries targeting test automation developers and test managers will be
+conducted using a form based on test automation maturity KPIs. The completed forms
+will be sent via email, and the results will be thoroughly evaluated.
+By who: The head of test automation at LocalTapiola will initiate inquiries, and the
+results will be evaluated in partnership with the Quality Assurance managers.
+Purpose: 
+Elevating Test Automation Practices to New Heights: Gaining Strategic Insights into
+Existing Gaps and Areas for Improvement
+
+
+SQ3-Roles
+We clearly define roles and responsibilities of stakeholders in test automation.
+SQ4-Knowledge 
+We are systematically learning from prior projects. We collect and share expertise, good
+test automation practices, and good test tools for future projects.
+SQ5-Competence
+Our test team has enough expertise and technical skills to build test automation based on
+our requirements.
+SQ6-Tools
+We currently have the right test tools that best suit our needs.
+SQ7-Test environment 
+We have control over the configuration of our test environment.
+SQ8-Guidelines
+We have guidelines on designing and executing automated tests. Those guidelines include,
+e.g., coding standards, test-data handling methods, specific test design techniques to
+create test cases, processes for reporting and storing test results, the general rules for test
+tool usage, or information on how to access external resources.
+SQ9-Prioritization 
+We effectively prioritize and schedule automated tests for the execution.
+SQ10-Results
+We are capable to manage and integrate test results collected from different sources (e.g.,
+different test tools, test levels, test phases) into a big picture, and then report useful
+information to the relevant stakeholders.
+SQ11-Process
+We organize our test automation activities in the stable and controllable test process.
+SQ12-SUT 
+Our Software Under Test enables us to conduct our test automation, e.g., maturity, running
+speed, or testability of our Software Under Test is not a problem for our test automation.
+11. Training
+From the perspective of a test automation developer, it is essential to offer training on the new
+libraries, tools, and methodologies developed for all stakeholders involved in test automation at
+LocalTapiola. This initiative will facilitate knowledge sharing and help dismantle existing silos
+within the team.
+
+
+We are establishing a professional development pathway for manual testers at LocalTapiola.
+This initiative will enable our manual testers to cultivate a culture of test automation within the
+LocalTapiola Quality Assurance sector. Gaining even a minimal understanding of test automation
+practices can significantly enhance manual testers' comprehension of our automation efforts
+and objectives. This knowledge not only clarifies our processes but also provides valuable
+insights that can improve our testing practices.
+The Head of Test Automation at LocalTapiola, along with the LocalTapiola Test Automation
+Team, will take charge of collecting ideas and resources for upcoming training sessions. We are
+always open to hearing ideas from our vendors regarding this matter and are eager to
+strengthen our culture through the training they provide.
+12. Continuous Improvement
+Continuous improvement in test automation necessitates a proactive strategy for identifying
+gaps, embracing innovation, and empowering teams. By cultivating a culture of enhancement
+and systematically tackling inefficiencies, LocalTapiola can transform our test automation into an
+invaluable asset for delivering high-quality software more efficiently.

@@ -1,0 +1,249 @@
+# ==============================================================================
+# Test Data - All Element Locators (XPATH/CSS Selectors)
+# Centralized locator management to avoid hardcoded paths in tests
+# Using stable selectors (data-testid, name, id, class) where possible
+# Fallback to robust XPath expressions
+# ==============================================================================
+
+# -----------------------------------------
+# Login Page Locators
+# -----------------------------------------
+login_page:
+  username_field:
+    selector: "id=username"
+    type: "css"
+  password_field:
+    selector: "id=password"
+    type: "css"
+  login_button:
+    selector: "id=login-btn"
+    type: "css"
+  login_button_alt:
+    selector: "//button[contains(@type, 'submit') or contains(text(), 'Login')]"
+    type: "xpath"
+  remember_me_checkbox:
+    selector: "id=remember-me"
+    type: "css"
+  forgot_password_link:
+    selector: "//a[contains(text(), 'Forgot') or contains(text(), 'Password')]"
+    type: "xpath"
+  signup_link:
+    selector: "//a[contains(text(), 'Sign') or contains(text(), 'Register') or contains(text(), 'Create')]"
+    type: "xpath"
+  login_error_message:
+    selector: "class=error-message"
+    type: "css"
+  login_error_message_detail:
+    selector: "//div[contains(@class, 'error') or contains(@class, 'alert')]"
+    type: "xpath"
+  logout_button:
+    selector: "id=logout-btn"
+    type: "css"
+  logout_button_alt:
+    selector: "//a[contains(text(), 'Logout') or contains(text(), 'Sign out')]"
+    type: "xpath"
+  welcome_message:
+    selector: "id=welcome-message"
+    type: "css"
+  welcome_message_text:
+    selector: "//div[contains(@class, 'welcome') or contains(@class, 'greeting')]"
+    type: "xpath"
+  loading_indicator:
+    selector: "//div[contains(@class, 'loading') or contains(@class, 'spinner') or contains(@data-testid, 'loading')]"
+    type: "xpath"
+  banner_notification:
+    selector: "//div[contains(@class, 'banner') or contains(@class, 'notification') or contains(@class, 'toast')]"
+    type: "xpath"
+
+# -----------------------------------------
+# Home Page Locators
+# -----------------------------------------
+home_page:
+  header_title:
+    selector: "id=app-title"
+    type: "css"
+  navigation_menu:
+    selector: "id=main-nav"
+    type: "css"
+  navigation_menu_list:
+    selector: "//nav[contains(@id, 'nav') or contains(@class, 'nav')]//a"
+    type: "xpath"
+  dashboard_panel:
+    selector: "id=dashboard"
+    type: "css"
+  dashboard_panel_alt:
+    selector: "//div[contains(@class, 'dashboard') or contains(@data-testid, 'dashboard')]"
+    type: "xpath"
+  search_bar:
+    selector: "id=search-input"
+    type: "css"
+  search_bar_placeholder:
+    selector: "//input[@placeholder='Search']"
+    type: "xpath"
+  search_results:
+    selector: "id=search-results"
+    type: "css"
+  quick_actions:
+    selector: "//div[contains(@class, 'quick-actions') or contains(@class, 'shortcuts')]"
+    type: "xpath"
+  user_profile_dropdown:
+    selector: "id=user-profile-menu"
+    type: "css"
+  notifications bell:
+    selector: "id=notifications"
+    type: "css"
+  footer:
+    selector: "//footer"
+    type: "xpath"
+  footer_links:
+    selector: "//footer//a"
+    type: "xpath"
+
+# -----------------------------------------
+# Navigation Page Locators
+# -----------------------------------------
+navigation:
+  menu_item:
+    selector: "//li[contains(@class, 'menu-item') or contains(@class, 'nav-item')]"
+    type: "xpath"
+  breadcrumb:
+    selector: "id=breadcrumb-nav"
+    type: "css"
+  breadcrumb_item:
+    selector: "//nav[contains(@class, 'breadcrumb')]//a"
+    type: "xpath"
+  sidebar:
+    selector: "id=sidebar"
+    type: "css"
+  sidebar_items:
+    selector: "//aside[contains(@class, 'sidebar')]//a"
+    type: "xpath"
+  dropdown_menu:
+    selector: "//div[contains(@class, 'dropdown') or contains(@class, 'dropdown-menu')]"
+    type: "xpath"
+  dropdown_item:
+    selector: "//li[contains(@class, 'dropdown-item')]//a"
+    type: "xpath"
+  modal:
+    selector: "//div[contains(@class, 'modal') or contains(@data-testid, 'modal')]"
+    type: "xpath"
+  modal_close:
+    selector: "//button[contains(@aria-label, 'close') or contains(text(), 'Close') or contains(@data-testid, 'close')]"
+    type: "xpath"
+  tab:
+    selector: "//div[contains(@class, 'tabs')]//a[contains(@class, 'tab')]"
+    type: "xpath"
+  tab_active:
+    selector: "//div[contains(@class, 'tabs')]//a[contains(@class, 'tab') and contains(@class, 'active')]"
+    type: "xpath"
+
+# -----------------------------------------
+# Form Locators
+# -----------------------------------------
+forms:
+  text_input:
+    selector: "//input[@type='text' or @type='email' or @type='tel']"
+    type: "xpath"
+  password_input:
+    selector: "//input[@type='password']"
+    type: "xpath"
+  textarea:
+    selector: "//textarea"
+    type: "xpath"
+  checkbox:
+    selector: "//input[@type='checkbox']"
+    type: "xpath"
+  radio_button:
+    selector: "//input[@type='radio']"
+    type: "xpath"
+  select_dropdown:
+    selector: "//select"
+    type: "xpath"
+  select_option:
+    selector: "//select/option"
+    type: "xpath"
+  file_upload:
+    selector: "//input[@type='file']"
+    type: "xpath"
+  submit_button:
+    selector: "//button[@type='submit']"
+    type: "xpath"
+  reset_button:
+    selector: "//button[@type='reset' or contains(text(), 'Reset')]"
+    type: "xpath"
+  form_field_label:
+    selector: "//label"
+    type: "xpath"
+  form_validation_error:
+    selector: "//div[contains(@class, 'error') or contains(@class, 'invalid') or contains(@class, 'warning')]"
+    type: "xpath"
+  form_success_message:
+    selector: "//div[contains(@class, 'success') or contains(@class, 'confirm')]"
+    type: "xpath"
+  input_field:
+    selector: "//input"
+    type: "xpath"
+  required_indicator:
+    selector: "//span[contains(@class, 'required') or text() = '*']"
+    type: "xpath"
+
+# -----------------------------------------
+# Table / Data Grid Locators
+# -----------------------------------------
+tables:
+  data_table:
+    selector: "//table[contains(@class, 'table') or contains(@data-testid, 'table')]"
+    type: "xpath"
+  table_header:
+    selector: "//table//thead//th"
+    type: "xpath"
+  table_row:
+    selector: "//table//tbody//tr"
+    type: "xpath"
+  table_cell:
+    selector: "//table//td"
+    type: "xpath"
+  pagination:
+    selector: "//div[contains(@class, 'pagination') or contains(@data-testid, 'pagination')]"
+    type: "xpath"
+  sort_arrow:
+    selector: "//th[contains(@class, 'sortable')]"
+    type: "xpath"
+  filter_button:
+    selector: "//button[contains(@class, 'filter') or contains(text(), 'Filter')]"
+    type: "xpath"
+  export_button:
+    selector: "//button[contains(@class, 'export') or contains(text(), 'Export')]"
+    type: "xpath"
+  row_action_menu:
+    selector: "//button[contains(@class, 'action') or contains(@class, 'more')]"
+    type: "xpath"
+
+# -----------------------------------------
+# Common / Shared Locators
+# -----------------------------------------
+common:
+  any_link:
+    selector: "//a"
+    type: "xpath"
+  any_button:
+    selector: "//button"
+    type: "xpath"
+  any_image:
+    selector: "//img"
+    type: "xpath"
+  alert_dialog:
+    selector: "//div[contains(@class, 'alert') or contains(@class, 'dialog') or contains(@role, 'alert')]"
+    type: "xpath"
+  overlay:
+    selector: "//div[contains(@class, 'overlay') or contains(@class, 'backdrop')]"
+    type: "xpath"
+  spinner:
+    selector: "//div[contains(@class, 'spinner') or contains(@class, 'loader') or contains(@data-testid, 'spinner')]"
+    type: "xpath"
+  tooltip:
+    selector: "//span[contains(@class, 'tooltip')]"
+    type: "xpath"
+  icon_button:
+    selector: "//button[contains(@class, 'icon') or contains(@class, 'btn-icon')]"
+    type: "xpath"

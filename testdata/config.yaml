@@ -1,0 +1,77 @@
+# ==============================================================================
+# Test Data - Environment Configuration
+# ==============================================================================
+
+# Base URLs for each environment
+environments:
+  dev:
+    base_url: "https://dev.example.com"
+    api_url: "https://dev-api.example.com"
+    timeout: 30
+  sit:
+    base_url: "https://sit.example.com"
+    api_url: "https://sit-api.example.com"
+    timeout: 30
+  sit2:
+    base_url: "https://sit2.example.com"
+    api_url: "https://sit2-api.example.com"
+    timeout: 30
+  uat:
+    base_url: "https://uat.example.com"
+    api_url: "https://uat-api.example.com"
+    timeout: 30
+
+# Default environment for local execution
+default_environment: "dev"
+
+# Browser settings
+browser:
+  default_browser: "chromium"
+  headless: true
+  viewport_width: 1920
+  viewport_height: 1080
+  slow_mo: 0
+
+# Wait settings (in seconds)
+wait:
+  implicit_wait: 10
+  explicit_wait: 15
+  element_visible_wait: 10
+  element_clickable_wait: 10
+  page_load_timeout: 30
+
+# Screenshot settings
+screenshots:
+  enabled: true
+  on_failure: true
+  on_pass: false
+  directory: "output/screenshots"
+
+# Logging settings
+logging:
+  level: "DEBUG"
+  console_format: "%(asctime)s [%(levelname)s] %(message)s"
+  file_enabled: true
+  file_path: "output/automation.log"
+
+# Test execution settings
+execution:
+  retry_count: 0
+  retry_delay: 2
+  parallel_execution: false
+  max_parallel_workers: 4
+
+# Report settings
+reports:
+  log_html: "output/log.html"
+  report_html: "output/report.html"
+  output_xml: "output/result.xml"
+
+# Application-specific settings
+app:
+  default_language: "en-US"
+  default_currency: "USD"
+  features:
+    dark_mode: false
+    notifications: true
+    two_factor_auth: false

@@ -1,0 +1,6 @@
+robotframework>=7.0
+robotframework-seleniumlibrary>=6.0
+PyYAML>=6.0
+robotframework-assertion-engine>=5.0
+pytest>=7.0
+requests>=2.31
